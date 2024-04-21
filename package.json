@@ -1,6 +1,6 @@
 {
   "name": "abort-request",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "自动取消过期请求",
   "main": "src/index.js",
   "directories": {
@@ -10,8 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "release": "bumpp",
-    "npm:publish": "npm run build & npm publish",
-    "publish": "npm run build & npm publish"
+    "npm:publish": "npm run build & npm publish"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
