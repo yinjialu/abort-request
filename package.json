@@ -1,0 +1,35 @@
+{
+  "name": "abort-request",
+  "version": "1.0.0",
+  "description": "自动取消过期请求",
+  "main": "src/index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "release": "bumpp",
+    "prepublish": "npm run build & npm publish --tag=prerelease",
+    "publish": "npm run build & npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/yinjialu/abort-request.git"
+  },
+  "keywords": [
+    "request",
+    "signal"
+  ],
+  "author": "yinjialu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yinjialu/abort-request/issues"
+  },
+  "homepage": "https://github.com/yinjialu/abort-request#readme",
+  "devDependencies": {
+    "bumpp": "^9.3.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
