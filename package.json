@@ -1,6 +1,6 @@
 {
   "name": "abort-request",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "自动取消过期请求",
   "main": "src/index.js",
   "directories": {
@@ -11,6 +11,7 @@
     "build": "tsc",
     "release": "bumpp",
     "prepublish": "npm run build & npm publish --tag=prerelease",
+    "npm:publish": "npm run build & npm publish",
     "publish": "npm run build & npm publish"
   },
   "publishConfig": {
