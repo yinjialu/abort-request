@@ -1,6 +1,6 @@
 {
   "name": "abort-request",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "自动取消过期请求",
   "main": "src/index.js",
   "directories": {
