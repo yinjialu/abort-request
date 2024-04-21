@@ -10,6 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "release": "bumpp",
+    "npm:prepublish": "npm run build & npm publish --tag=prerelease",
     "npm:publish": "npm run build & npm publish"
   },
   "publishConfig": {
