@@ -108,7 +108,7 @@ export const createAutoAbortExpiredRequest = <
     };
     // 支持手动调用取消未完成的请求
     autoAbortExpiredRequest.abort = () => {
-        cleanup();
+        cleanup && cleanup()
     };
     return autoAbortExpiredRequest;
 };
