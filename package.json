@@ -2,7 +2,9 @@
   "name": "abort-request",
   "version": "1.0.7",
   "description": "自动取消过期请求",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "src/index.ts",
   "directories": {
     "doc": "docs"
   },
