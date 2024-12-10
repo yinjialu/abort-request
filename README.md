@@ -8,6 +8,50 @@
 npm i --save abort-request
 ```
 
+## React 使用示例
+
+```tsx
+import React, { useState, useEffect, useCallback } from 'react';
+import { createAutoAbortExpiredRequest, isAbortError } from 'abort-request';
+
+// 请求方法
+const getDataAPI = ({ params }: { params: { id: string } }) => {
+    // 发起请求
+};
+
+// 在组件外部创建这个请求方法的自动取消版本，确保多次 render 调用是同一个 getDataAPIAutoAbort 方法
+const getDataAPIAutoAbort = createAutoAbortExpiredRequest(getDataAPI);
+
+const Demo = () => {
+    const [id, setId] = useState();
+    const [data, setData] = useState();
+    const [loading, setLoading] = useState(false);
+
+    const handleQuery = useCallback(() => {
+        setLoading(true);
+        // getDataAPIAutoAbort(({ signal }) => [{ params: { id }, signal }]) // 支持传入 signal 来中止请求
+        getDataAPIAutoAbort({ params: { id } }) // 简单用法，传参不变，会丢弃请求返回的结果，不会中止请求
+            .then((res) => {
+                setData(res);
+                setLoading(false);
+            })
+            .catch((err) => {
+                // 判断不是取消请求的错误，才可以取消 loading
+                if (!isAbortError(err)) {
+                    setLoading(false);
+                }
+            });
+    }, [id]);
+
+    useEffect(() => {
+        handleQuery();
+    }, [handleQuery]);
+    return <></>;
+};
+```
+
+## Vue 使用示例
+
 -   优化前默认版本：
 
 ```ts
