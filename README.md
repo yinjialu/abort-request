@@ -115,3 +115,23 @@ const handleQuery = () => {
     // 不能在 finally 中处理 loading 状态
 };
 ```
+
+### 搭配 axios 全局的异常提示
+
+使用 axios.isCancel 区分被取消的请求
+
+```ts
+axios
+    .get('/user/12345', {
+        cancelToken: source.token,
+        signal: controller.signal,
+    })
+    .catch(function (thrown) {
+        if (axios.isCancel(thrown)) {
+            console.log('Request canceled', thrown.message);
+            // 此时不需要任何提示
+        } else {
+            // handle error
+        }
+    });
+```
