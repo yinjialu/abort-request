@@ -1,6 +1,6 @@
 {
   "name": "abort-request",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "自动取消过期请求",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
